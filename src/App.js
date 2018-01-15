@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
-import Drawer from 'material-ui/Drawer'
-import MenuItem from 'material-ui/MenuItem'
-
-import Counter from './Counter'
-import DefaultPropsComponent from './DefaultPropsComponent'
 import SideBar from "./SideBar";
+import routes from './routes'
 
 class App extends Component {
     state = {
@@ -25,22 +22,27 @@ class App extends Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <AppBar
-                        title="My First App"
-                        onLeftIconButtonClick={this.drawerToggle}
-                    />
-                    <SideBar
-                    isDrawerOpen = {this.state.isDrawerOpen}
-                    drawerToggle = {this.drawerToggle}
-                    />
-
-                    <Counter />
-
-                    <DefaultPropsComponent/>
-                    <DefaultPropsComponent name="Mateusz"/>
-                    <DefaultPropsComponent name="Ola"/>
-                    <DefaultPropsComponent name="Ala"/>
-                    <DefaultPropsComponent/>
+                    <Router>
+                        <div>
+                            <AppBar
+                                title="My First App"
+                                onLeftIconButtonClick={this.drawerToggle}
+                            />
+                            <SideBar
+                                isDrawerOpen={this.state.isDrawerOpen}
+                                drawerToggle={this.drawerToggle}
+                            />
+                            {
+                                routes.map(route => (
+                                    <Route
+                                        key={route.path}
+                                        path={route.path}
+                                        component={route.component}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </Router>
                 </div>
             </MuiThemeProvider>
         )
