@@ -6,11 +6,12 @@ import MenuItem from 'material-ui/MenuItem'
 
 import Counter from './Counter'
 import DefaultPropsComponent from './DefaultPropsComponent'
+import SideBar from "./SideBar";
 
 class App extends Component {
     state = {
         isDrawerOpen: false,
-        menuItems: ['First drawer item', 'Second drawer item', 'Third drawer item']
+
     }
 
     drawerToggle = () => {
@@ -28,22 +29,10 @@ class App extends Component {
                         title="My First App"
                         onLeftIconButtonClick={this.drawerToggle}
                     />
-                    <Drawer
-                        docked={false}
-                        width={250}
-                        open={this.state.isDrawerOpen}
-                        onRequestChange={this.drawerToggle}
-                    >
-                        {/*SOMETHIN FROM DB FOR EXAMPLE*/}
-                        {
-                            this.state.menuItems
-                                .map((textOnMenu, index) => (
-                                    <MenuItem key={index}>
-                                        {textOnMenu}
-                                    </MenuItem>
-                                ))
-                        }
-                    </Drawer>
+                    <SideBar
+                    isDrawerOpen = {this.state.isDrawerOpen}
+                    drawerToggle = {this.drawerToggle}
+                    />
 
                     <Counter />
 
