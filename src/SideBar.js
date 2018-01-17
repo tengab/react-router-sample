@@ -32,7 +32,6 @@ const SideBar = (props) => (
                 />
             ))
         }
-        />
     </Drawer>
 )
 

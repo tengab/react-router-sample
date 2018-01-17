@@ -18,14 +18,14 @@ class App extends Component {
     }
 
     render() {
-        console.log('Render App!', this.state)
+
         return (
             <MuiThemeProvider>
                 <div>
                     <Router>
                         <div>
                             <AppBar
-                                title="My First App"
+                                title="Appka Zdrapka"
                                 onLeftIconButtonClick={this.drawerToggle}
                             />
                             <SideBar
