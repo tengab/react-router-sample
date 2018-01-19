@@ -3,6 +3,8 @@ import DefaultPropsComponent from './DefaultPropsComponent'
 import REST from './REST'
 import RestToDoList from './RestToDoList'
 import FirebaseComponent from './FirebaseComponent'
+import FirebaseToDo from "./FirebaseToDo";
+import FirebaseLogIn from "./FirebaseLogIn";
 
 const routes = [
     {
@@ -29,6 +31,16 @@ const routes = [
         path: '/component/firebase',
         text: 'FireBase basics',
         component: FirebaseComponent
+    },
+    {
+        path: '/component/firebase-to-do',
+        text: 'FireBase To Do',
+        component: FirebaseToDo
+    },
+    {
+        path: '/component/firebase-login',
+        text: 'FireBase Log In',
+        component: FirebaseLogIn
     }
 ]
 
