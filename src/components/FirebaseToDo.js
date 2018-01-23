@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper'
 import RaisedButton from 'material-ui/RaisedButton'
 import {List, ListItem} from 'material-ui/List';
 import ActionInfo from 'material-ui/svg-icons/action/delete';
-import {database} from './firebase'
+import {database} from '../firebase'
 
 const styles = {
     margin: 20,

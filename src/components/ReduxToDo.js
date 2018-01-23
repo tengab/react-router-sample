@@ -7,7 +7,7 @@ import ActionDelete from 'material-ui/svg-icons/action/delete';
 import {lime500} from 'material-ui/styles/colors';
 
 import {connect} from 'react-redux'
-import {addTask} from './state/todo'
+import {addTask, deleteTask} from '../state/todo'
 
 const styles = {
     margin: 20,
@@ -71,7 +71,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    addTask: name => dispatch(addTask(name))
+    addTask: name => dispatch(addTask(name)),
+    deleteTask: key => dispatch(deleteTask(key))
 })
 
 export default connect(

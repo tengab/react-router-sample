@@ -1,11 +1,17 @@
 const ADD_TASK = 'todo/ADD_TASK'
+const DELETE_TASK = 'todo/DELETE_TASK'
 
-let nextTaskId
+let nextTaskId = 0
 
 export const addTask = name => ({
     type: ADD_TASK,
-    name: name,
+    name,
     key: nextTaskId++
+})
+
+export const deleteTask = key => ({
+    type: DELETE_TASK,
+    key
 })
 
 const initialState = {
@@ -24,6 +30,13 @@ export default (state = initialState, action) => {
                         key: action.key
                     }
                 ])
+            }
+        case DELETE_TASK:
+            return {
+                ...state,
+                tasks: state.tasks.filter((task)=>{
+                    task.key !== action.key
+                })
             }
         default:
             return state

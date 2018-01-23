@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
-import SideBar from "./SideBar";
+import SideBar from "./components/SideBar";
 import routes from './routes'
 import {Provider} from 'react-redux'
 
